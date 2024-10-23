@@ -2,7 +2,7 @@
 
 Este projeto é uma aplicação web simples que permite ao usuário contar quantas vezes uma letra específica aparece em uma frase digitada. Ele utiliza PHP para a lógica do backend, HTML para a estrutura da página e Bootstrap para o estilo.
 
-![contador_letra](https://github.com/user-attachments/assets/8d1d892a-2ace-43ce-b628-4d1af67106fd)
+![ocorrencia letra](https://github.com/user-attachments/assets/d4ef33d6-2d3e-44b4-bd91-d50939c92867)
 
 - ## Tecnologias Utilizadas
 
