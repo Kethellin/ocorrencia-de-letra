@@ -1,3 +1,7 @@
+<?php
+    $letras_para_contar = ['a'];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,7 +15,8 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Contador de Letras</h1>
-        <p class="text-center">Teste agora e descubra quantas letras definidas tem no seu texto!</p>
+        <p class="text-center">Teste agora e descubra quantas letras '<?php echo implode(", ", $letras_para_contar); ?>' tem no seu texto!</p>
+
         <div class="row justify-content-center mt-4">
             <div class="col-md-6">
                 <form method="POST">
@@ -25,8 +30,6 @@
         </div>
 
         <?php 
-            $letras_para_contar = ['a'];
-
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $texto      = strtolower($_POST['texto']);
                 $resultados = [];
@@ -41,12 +44,15 @@
             <div class="row justify-content-center mt-4">
                 <div class="col-md-6">
                     <div class="alert alert-info">
+                        <p><?php echo "Texto: $texto"; ?></p>
                         <ul>
-                            <?php 
-                                foreach ($resultados as $letra => $quantidade){
-                                    echo "<li>A letra '$letra' $mensagem no texto.</li>";
-                                }; 
-                            ?>
+                            <li>
+                                <?php 
+                                    foreach ($resultados as $letra => $quantidade){
+                                        echo "A letra '$letra' $mensagem no texto.";
+                                    }; 
+                                ?>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -56,5 +62,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
